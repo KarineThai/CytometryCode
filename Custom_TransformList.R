@@ -1,6 +1,6 @@
 library(flowCore)
 library(reshape2)
-library(xlsx)
+
 logicle_transformList = function(ff, df, colw) {
   #' Create a transformList using logicle tranformation with custom parameters per channel
   #'
@@ -17,11 +17,11 @@ logicle_transformList = function(ff, df, colw) {
   }
   transformList = transformList(par, lgcl)
   for (pa in par) {
-  #print(pa)  
-  #print(as.list(environment(transformList@transforms[[pa]]@f)))
+  print(pa)  
+  print(as.list(environment(transformList@transforms[[pa]]@f)))
   }
   return(transformList)
 }
 
-logicle_transformList(ff, df, "w_iteration")
+
 
